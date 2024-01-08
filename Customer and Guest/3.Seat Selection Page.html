@@ -1,0 +1,1813 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Movie Ticket Booking - Bootstarp & JS</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      href="https://.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- <link rel="stylesheet" href="../static/css/style.css" /> -->
+    <link rel="stylesheet" href="../static/css/styles.css" />
+  </head>
+  <body>
+    <img
+      src="../static/assets/Leo banner.jpg"
+      alt="Bg image"
+      class="bg-img img-fluid"
+    />
+
+    <nav class="navbar navbar-expand-lg">
+      <div class="container d-flex align-items-end gap-2">
+        <a class="navbar-brand fs-5 col-sm-2" href="1.Main Page.html"
+          >Movie<span>Tickets</span></a
+        >
+        <div class="theatre col-lg-6 col-sm-6 col-md-6">
+          <select name="theatre" id="theatre">
+            <option value="inox">INOX</option>
+            <option value="arrs">ARRS</option>
+            <option value="ascars">Ascars</option>
+          </select>
+        </div>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="" role="button"
+            ><i class="fa fa-bars" aria-hidden="true" style="color: #e6e6ff"></i
+          ></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="row">
+            <div class="col">
+              <select name="city" id="city">
+                <option value="salem">Salem</option>
+                <option value="Coimbatore">Coimbatore</option>
+                <option value="chennai">Chennai</option>
+              </select>
+            </div>
+            <!-- <div class="col">
+                <i class="fa fa-ticket ticket-nav" aria-hidden="true"></i>
+            </div> -->
+            <div class="col">
+              <img
+                src="../static/assets/avatar-u.jpeg"
+                alt=""
+                class="profile mt-3 sign-in-btn"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="container mt-4 text-light">
+      <div class="row d-flex justify-content-center">
+        <div class="col text-start">Leo Rs.150</div>
+        <div class="col text-end">
+          <i class="fa fa-clock-o" aria-hidden="true"></i> 2hrs45min
+        </div>
+      </div>
+      <div class="row mt-5 d-flex justify-content-center gap-2">
+        <div class="col-4 card-seat">
+          <img src="../static/assets/leo banner2.jpg" alt="" />
+          <p class="card-title mt-5">Directed By</p>
+          <p class="mt-1">Lokesh Kanagaraj</p>
+          <p class="card-title">Cast</p>
+          <p class="mt-1">Vijay, Trisha, Arjun, Sanjay Dutt</p>
+        </div>
+        <div class="col-8 d-flex flex-column tab-border">
+          <div class="container seat-tab">
+            <div class="row">
+              <div class="col-sm-6 mt-2 d-flex justify-content-center">
+                <ul class="nav nav-pills">
+                  <li class="nav-item">
+                    <a class="nav-link active" data-bs-toggle="pill" href="#mon"
+                      >Mon</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="pill" href="#tue"
+                      >Tue</a
+                    >
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" data-bs-toggle="pill" href="#wed"
+                      >Wed</a
+                    >
+                  </li>
+                </ul>
+              </div>
+              <div class="col-sm-6 mt-2 d-flex justify-content-center">
+                <div class="tab-content">
+                  <div class="tab-pane container active" id="mon">
+                    <ul class="nav nav-pills">
+                      <li class="nav-item">
+                        <a
+                          class="nav-link active"
+                          data-bs-toggle="pill"
+                          href="#sixam"
+                          >06:00AM</a
+                        >
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="pill" href="#tenam"
+                          >10:00AM</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="tab-pane container fade" id="tue">
+                    <ul class="nav nav-pills">
+                      <li class="nav-item">
+                        <a
+                          class="nav-link active"
+                          data-bs-toggle="pill"
+                          href="#seven"
+                          >07:00AM</a
+                        >
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="pill" href="#eleven"
+                          >11:00AM</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="tab-pane container fade" id="wed">
+                    <ul class="nav nav-pills">
+                      <li class="nav-item">
+                        <a
+                          class="nav-link active"
+                          data-bs-toggle="pill"
+                          href="#sixam"
+                          >06:00AM</a
+                        >
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="pill" href="#ten"
+                          >10:00AM</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                  <div class="tab-pane container fade" id="thu">
+                    <ul class="nav nav-pills">
+                      <li class="nav-item">
+                        <a
+                          class="nav-link active"
+                          data-bs-toggle="pill"
+                          href="#seven"
+                          >07:00AM</a
+                        >
+                      </li>
+                      <li class="nav-item">
+                        <a class="nav-link" data-bs-toggle="pill" href="#eleven"
+                          >11:00AM</a
+                        >
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container">
+            <div
+              class="row mt-3 d-flex justify-content-center align-items-center"
+            >
+              <div class="screen"></div>
+            </div>
+            <div class="tab-content">
+              <div class="tab-pane container active" id="sixam">
+                <div
+                  class="container mt-5 d-flex flex-column gap-2 flex-nowrap seat-txt"
+                >
+                  <div class="row d-flex gap-2 flex-nowrap">
+                    <div class="col">H</div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('H', 1)"
+                      id="H-1"
+                    >
+                      1
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('H', 2)"
+                      id="H-2"
+                    >
+                      2
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('H', 3)"
+                      id="H-3"
+                    >
+                      3
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('H', 4)"
+                      id="H-4"
+                    >
+                      4
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('H', 5)"
+                      id="H-5"
+                    >
+                      5
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('H', 6)"
+                      id="H-6"
+                    >
+                      6
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('H', 7)"
+                      id="H-7"
+                    >
+                      7
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('H', 8)"
+                      id="H-8"
+                    >
+                      8
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('H', 9)"
+                      id="H-9"
+                    >
+                      9
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('H', 10)"
+                      id="H-10"
+                    >
+                      10
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('H', 11)"
+                      id="H-11"
+                    >
+                      11
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('H', 12)"
+                      id="H-12"
+                    >
+                      12
+                    </div>
+                  </div>
+                  <div class="row d-flex gap-2 flex-nowrap">
+                    <div class="col">G</div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('G', 1)"
+                      id="G-1"
+                    >
+                      1
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('G', 2)"
+                      id="G-2"
+                    >
+                      2
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('G', 3)"
+                      id="G-3"
+                    >
+                      3
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('G', 4)"
+                      id="G-4"
+                    >
+                      4
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('G', 5)"
+                      id="G-5"
+                    >
+                      5
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('G', 6)"
+                      id="G-6"
+                    >
+                      6
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('G', 7)"
+                      id="G-7"
+                    >
+                      7
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('G', 8)"
+                      id="G-8"
+                    >
+                      8
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('G', 9)"
+                      id="G-9"
+                    >
+                      9
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('G', 10)"
+                      id="G-10"
+                    >
+                      10
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('G', 11)"
+                      id="G-11"
+                    >
+                      11
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('G', 12)"
+                      id="G-12"
+                    >
+                      12
+                    </div>
+                  </div>
+                  <div class="row d-flex gap-2 flex-nowrap">
+                    <div class="col">F</div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('F', 1)"
+                      id="F-1"
+                    >
+                      1
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('F', 2)"
+                      id="F-2"
+                    >
+                      2
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('F', 3)"
+                      id="F-3"
+                    >
+                      3
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('F', 4)"
+                      id="F-4"
+                    >
+                      4
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('F', 5)"
+                      id="F-5"
+                    >
+                      5
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('F', 6)"
+                      id="F-6"
+                    >
+                      6
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('F', 7)"
+                      id="F-7"
+                    >
+                      7
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('F', 8)"
+                      id="F-8"
+                    >
+                      8
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('F', 9)"
+                      id="F-9"
+                    >
+                      9
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('F', 10)"
+                      id="F-10"
+                    >
+                      10
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('F', 11)"
+                      id="F-11"
+                    >
+                      11
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('F', 12)"
+                      id="F-12"
+                    >
+                      12
+                    </div>
+                  </div>
+                  <div class="row d-flex gap-2 flex-nowrap">
+                    <div class="col">E</div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('E', 1)"
+                      id="E-1"
+                    >
+                      1
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('E', 2)"
+                      id="E-2"
+                    >
+                      2
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('E', 3)"
+                      id="E-3"
+                    >
+                      3
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('E', 4)"
+                      id="E-4"
+                    >
+                      4
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('E', 5)"
+                      id="E-5"
+                    >
+                      5
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('E', 6)"
+                      id="E-6"
+                    >
+                      6
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('E', 7)"
+                      id="E-7"
+                    >
+                      7
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('E', 8)"
+                      id="E-8"
+                    >
+                      8
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('E', 9)"
+                      id="E-9"
+                    >
+                      9
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('E', 10)"
+                      id="E-10"
+                    >
+                      10
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('E', 11)"
+                      id="E-11"
+                    >
+                      11
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('H', 12)"
+                      id="H-12"
+                    >
+                      12
+                    </div>
+                  </div>
+                  <div class="row d-flex gap-2 flex-nowrap">
+                    <div class="col">D</div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('D', 1)"
+                      id="D-1"
+                    >
+                      1
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('D', 2)"
+                      id="D-2"
+                    >
+                      2
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('D', 3)"
+                      id="D-3"
+                    >
+                      3
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('H', 4)"
+                      id="H-4"
+                    >
+                      4
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('D', 5)"
+                      id="D-5"
+                    >
+                      5
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('D', 6)"
+                      id="D-6"
+                    >
+                      6
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('D', 7)"
+                      id="D-7"
+                    >
+                      7
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('D', 8)"
+                      id="D-8"
+                    >
+                      8
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('D', 9)"
+                      id="D-9"
+                    >
+                      9
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('D', 10)"
+                      id="D-10"
+                    >
+                      10
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('D', 11)"
+                      id="D-11"
+                    >
+                      11
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('D', 12)"
+                      id="D-12"
+                    >
+                      12
+                    </div>
+                  </div>
+                  <div class="row d-flex gap-2 flex-nowrap">
+                    <div class="col">C</div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('C', 1)"
+                      id="C-1"
+                    >
+                      1
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('C', 2)"
+                      id="C-2"
+                    >
+                      2
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('C', 3)"
+                      id="C-3"
+                    >
+                      3
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('C', 4)"
+                      id="C-4"
+                    >
+                      4
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('C', 5)"
+                      id="C-5"
+                    >
+                      5
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('C', 6)"
+                      id="C-6"
+                    >
+                      6
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('C', 7)"
+                      id="C-7"
+                    >
+                      7
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('C', 8)"
+                      id="C-8"
+                    >
+                      8
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('C', 9)"
+                      id="C-9"
+                    >
+                      9
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('C', 10)"
+                      id="C-10"
+                    >
+                      10
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('C', 11)"
+                      id="C-11"
+                    >
+                      11
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('C', 12)"
+                      id="C-12"
+                    >
+                      12
+                    </div>
+                  </div>
+                  <div class="row d-flex gap-2 flex-nowrap">
+                    <div class="col">B</div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('B', 1)"
+                      id="B-1"
+                    >
+                      1
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('B', 2)"
+                      id="B-2"
+                    >
+                      2
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('B', 3)"
+                      id="B-3"
+                    >
+                      3
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('B', 4)"
+                      id="B-4"
+                    >
+                      4
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('B', 5)"
+                      id="B-5"
+                    >
+                      5
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('B', 6)"
+                      id="B-6"
+                    >
+                      6
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('B', 7)"
+                      id="B-7"
+                    >
+                      7
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('B', 8)"
+                      id="B-8"
+                    >
+                      8
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('B', 9)"
+                      id="B-9"
+                    >
+                      9
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('B', 10)"
+                      id="B-10"
+                    >
+                      10
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('B', 11)"
+                      id="B-11"
+                    >
+                      11
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('B', 12)"
+                      id="B-12"
+                    >
+                      12
+                    </div>
+                  </div>
+                  <div class="row d-flex gap-2 flex-nowrap">
+                    <div class="col">A</div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('A', 1)"
+                      id="A-1"
+                    >
+                      1
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('A', 2)"
+                      id="A-2"
+                    >
+                      2
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('A', 3)"
+                      id="A-3"
+                    >
+                      3
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('A', 4)"
+                      id="A-4"
+                    >
+                      4
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('A', 5)"
+                      id="A-5"
+                    >
+                      5
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('A', 6)"
+                      id="A-6"
+                    >
+                      6
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('A', 7)"
+                      id="A-7"
+                    >
+                      7
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('A', 8)"
+                      id="A-8"
+                    >
+                      8
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('A', 9)"
+                      id="A-9"
+                    >
+                      9
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('A', 10)"
+                      id="A-10"
+                    >
+                      10
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('A', 11)"
+                      id="A-11"
+                    >
+                      11
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('A', 12)"
+                      id="A-12"
+                    >
+                      12
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="tab-pane container fade" id="tenam">
+                <div
+                  class="container mt-5 d-flex flex-column gap-2 flex-nowrap seat-txt"
+                >
+                  <div class="row d-flex gap-2 flex-nowrap">
+                    <div class="col">H</div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('H1', 1)"
+                      id="H1-1"
+                    >
+                      1
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('H1', 2)"
+                      id="H1-2"
+                    >
+                      2
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('H1', 3)"
+                      id="H1-3"
+                    >
+                      3
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('H1', 4)"
+                      id="H1-4"
+                    >
+                      4
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('H1', 5)"
+                      id="H1-5"
+                    >
+                      5
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('H1', 6)"
+                      id="H1-6"
+                    >
+                      6
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('H1', 7)"
+                      id="H1-7"
+                    >
+                      7
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('H1', 8)"
+                      id="H1-8"
+                    >
+                      8
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('H1', 9)"
+                      id="H1-9"
+                    >
+                      9
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('H1', 10)"
+                      id="H1-10"
+                    >
+                      10
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('H1', 11)"
+                      id="H1-11"
+                    >
+                      11
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('H1', 12)"
+                      id="H1-12"
+                    >
+                      12
+                    </div>
+                  </div>
+                  <div class="row d-flex gap-2 flex-nowrap">
+                    <div class="col">G</div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('G1', 1)"
+                      id="G1-1"
+                    >
+                      1
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('G1', 2)"
+                      id="G1-2"
+                    >
+                      2
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('G1', 3)"
+                      id="G1-3"
+                    >
+                      3
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('G1', 4)"
+                      id="G1-4"
+                    >
+                      4
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('G1', 5)"
+                      id="G1-5"
+                    >
+                      5
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('G1', 6)"
+                      id="G1-6"
+                    >
+                      6
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('G1', 7)"
+                      id="G1-7"
+                    >
+                      7
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('G1', 8)"
+                      id="G1-8"
+                    >
+                      8
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('G1', 9)"
+                      id="G1-9"
+                    >
+                      9
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('G1', 10)"
+                      id="G1-10"
+                    >
+                      10
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('G1', 11)"
+                      id="G1-11"
+                    >
+                      11
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('G1', 12)"
+                      id="G1-12"
+                    >
+                      12
+                    </div>
+                  </div>
+                  <div class="row d-flex gap-2 flex-nowrap">
+                    <div class="col">F</div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('F1', 1)"
+                      id="F1-1"
+                    >
+                      1
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('F1', 2)"
+                      id="F1-2"
+                    >
+                      2
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('F1', 3)"
+                      id="F1-3"
+                    >
+                      3
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('F1', 4)"
+                      id="F1-4"
+                    >
+                      4
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('F1', 5)"
+                      id="F1-5"
+                    >
+                      5
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('F1', 6)"
+                      id="F1-6"
+                    >
+                      6
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('F1', 7)"
+                      id="F1-7"
+                    >
+                      7
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('F1', 8)"
+                      id="F1-8"
+                    >
+                      8
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('F', 9)"
+                      id="F-9"
+                    >
+                      9
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('F1', 10)"
+                      id="F1-10"
+                    >
+                      10
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('F1', 11)"
+                      id="F1-11"
+                    >
+                      11
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('F1', 12)"
+                      id="F1-12"
+                    >
+                      12
+                    </div>
+                  </div>
+                  <div class="row d-flex gap-2 flex-nowrap">
+                    <div class="col">E</div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('E1', 1)"
+                      id="E1-1"
+                    >
+                      1
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('E1', 2)"
+                      id="E1-2"
+                    >
+                      2
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('E1', 3)"
+                      id="E1-3"
+                    >
+                      3
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('E1', 4)"
+                      id="E1-4"
+                    >
+                      4
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('E1', 5)"
+                      id="E1-5"
+                    >
+                      5
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('E1', 6)"
+                      id="E1-6"
+                    >
+                      6
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('E1', 7)"
+                      id="E1-7"
+                    >
+                      7
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('E1', 8)"
+                      id="E1-8"
+                    >
+                      8
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('E1', 9)"
+                      id="E1-9"
+                    >
+                      9
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('E1', 10)"
+                      id="E1-10"
+                    >
+                      10
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('E1', 11)"
+                      id="E1-11"
+                    >
+                      11
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('H1', 12)"
+                      id="H1-12"
+                    >
+                      12
+                    </div>
+                  </div>
+                  <div class="row d-flex gap-2 flex-nowrap">
+                    <div class="col">D</div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('D1', 1)"
+                      id="D1-1"
+                    >
+                      1
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('D1', 2)"
+                      id="D1-2"
+                    >
+                      2
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('D1', 3)"
+                      id="D1-3"
+                    >
+                      3
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('H1', 4)"
+                      id="H1-4"
+                    >
+                      4
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('D1', 5)"
+                      id="D1-5"
+                    >
+                      5
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('D1', 6)"
+                      id="D1-6"
+                    >
+                      6
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('D1', 7)"
+                      id="D1-7"
+                    >
+                      7
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('D1', 8)"
+                      id="D1-8"
+                    >
+                      8
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('D1', 9)"
+                      id="D1-9"
+                    >
+                      9
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('D1', 10)"
+                      id="D1-10"
+                    >
+                      10
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('D1', 11)"
+                      id="D1-11"
+                    >
+                      11
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('D1', 12)"
+                      id="D1-12"
+                    >
+                      12
+                    </div>
+                  </div>
+                  <div class="row d-flex gap-2 flex-nowrap">
+                    <div class="col">C</div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('C1', 1)"
+                      id="C1-1"
+                    >
+                      1
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('C1', 2)"
+                      id="C1-2"
+                    >
+                      2
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('C1', 3)"
+                      id="C1-3"
+                    >
+                      3
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('C1', 4)"
+                      id="C1-4"
+                    >
+                      4
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('C1', 5)"
+                      id="C1-5"
+                    >
+                      5
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('C1', 6)"
+                      id="C1-6"
+                    >
+                      6
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('C1', 7)"
+                      id="C1-7"
+                    >
+                      7
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('C1', 8)"
+                      id="C1-8"
+                    >
+                      8
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('C1', 9)"
+                      id="C1-9"
+                    >
+                      9
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('C1', 10)"
+                      id="C1-10"
+                    >
+                      10
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('C1', 11)"
+                      id="C1-11"
+                    >
+                      11
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('C1', 12)"
+                      id="C1-12"
+                    >
+                      12
+                    </div>
+                  </div>
+                  <div class="row d-flex gap-2 flex-nowrap">
+                    <div class="col">B</div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('B1', 1)"
+                      id="B1-1"
+                    >
+                      1
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('B', 2)"
+                      id="B1-2"
+                    >
+                      2
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('B1', 3)"
+                      id="B1-3"
+                    >
+                      3
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('B1', 4)"
+                      id="B1-4"
+                    >
+                      4
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('B1', 5)"
+                      id="B1-5"
+                    >
+                      5
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('B1', 6)"
+                      id="B1-6"
+                    >
+                      6
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('B1', 7)"
+                      id="B1-7"
+                    >
+                      7
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('B1', 8)"
+                      id="B1-8"
+                    >
+                      8
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('B1', 9)"
+                      id="B1-9"
+                    >
+                      9
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('B1', 10)"
+                      id="B1-10"
+                    >
+                      10
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('B1', 11)"
+                      id="B1-11"
+                    >
+                      11
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('B1', 12)"
+                      id="B1-12"
+                    >
+                      12
+                    </div>
+                  </div>
+                  <div class="row d-flex gap-2 flex-nowrap">
+                    <div class="col">A</div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('A1', 1)"
+                      id="A1-1"
+                    >
+                      1
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('A1', 2)"
+                      id="A1-2"
+                    >
+                      2
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('A1', 3)"
+                      id="A1-3"
+                    >
+                      3
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('A1', 4)"
+                      id="A1-4"
+                    >
+                      4
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('A1', 5)"
+                      id="A1-5"
+                    >
+                      5
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('A1', 6)"
+                      id="A1-6"
+                    >
+                      6
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('A1', 7)"
+                      id="A1-7"
+                    >
+                      7
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('A1', 8)"
+                      id="A1-8"
+                    >
+                      8
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('A1', 9)"
+                      id="A1-9"
+                    >
+                      9
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('A1', 10)"
+                      id="A1-10"
+                    >
+                      10
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('A1', 11)"
+                      id="A1-11"
+                    >
+                      11
+                    </div>
+                    <div
+                      class="col box seat"
+                      onclick="toggleSeat('A1', 12)"
+                      id="A1-12"
+                    >
+                      12
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="container mt-3 d-flex justify-content-center">
+              <div class="row">
+                <div class="col d-flex gap-2">
+                  <div class="box seat seat-identify"></div>
+                  <p class="seat-identify-p">Available</p>
+                </div>
+                <div class="col d-flex gap-2">
+                  <div class="box seat seat-identify booked-clr"></div>
+                  <p class="seat-identify-p">Booked</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container mt-2">
+      <div class="row">
+        <div class="col-6 text-start">
+          <a href="1.Main Page.html"
+            ><button class="btn cancel-btn login-btn">Cancel</button></a
+          >
+        </div>
+        <div class="col-6 text-end">
+          <a href="4.Proceed Page.html"
+            ><button
+              class="btn login-btn pay-btn"
+              id="rateButton"
+              onclick="updateRate()"
+            >
+              Pay Rs.0
+            </button></a
+          >
+        </div>
+      </div>
+    </div>
+    <div class="footer footer-movie-description">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 footer-logo mt-4">
+            <a href="#">Movie <span>Tickets</span></a>
+          </div>
+        </div>
+        <div class="row mt-4 d-flex align-items-start policy-item">
+          <div
+            class="col-4 d-flex flex-column justify-content-center align-items-center footer-detail"
+          >
+            <p><i class="fa fa-envelope" aria-hidden="true"></i></p>
+            <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal11"
+              ><p class="text-center">24/7 Customer Support</p></a
+            >
+          </div>
+          <div
+            class="col-4 d-flex flex-column justify-content-center align-items-center footer-detail"
+          >
+            <p><i class="fa fa-envelope" aria-hidden="true"></i></p>
+            <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal12"
+              ><p class="text-center">Resend Booking Confirmation</p></a
+            >
+          </div>
+          <div
+            class="col-4 d-flex flex-column justify-content-center align-items-center footer-detail"
+          >
+            <p><i class="fa fa-envelope" aria-hidden="true"></i></p>
+            <a href="#subscribe-footer"><p class="text-center">Newsletter Subscription</p></a>
+          </div>
+        </div>
+        <div class="row">
+          <nav class="navbar navbar-expand-lg">
+            <div
+              class="container d-flex justify-content-center align-items-center mt-2"
+            >
+              <form class="d-flex subscribe">
+                <input
+                  class="form-control me-2 needs-validation"
+                  type="email"
+                  placeholder="Email Address"
+                  aria-label="Search"
+                  onkeyup="validateEmail(this.value)"
+                />
+                <button class="btn btn-subscribe" type="submit" disabled id="subscribe-footer">
+                  Subscribe
+                </button>
+              </form>
+            </div>
+          </nav>
+        </div>
+        <div class="row social-media">
+          <div class="col-lg-12 social-media-col">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal11"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel11"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel11">Frequently Asked Questions</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <h6 class="question-clr">Q: How can I book movie tickets online?</h6>
+          <p>A: To book movie tickets online, follow these steps:
+            <ol>
+              <li>Visit our website or mobile app.</li>
+              <li>Select your preferred movie and showtime.</li>
+              <li>Choose your seats and the number of tickets.</li>
+              <li>Proceed to payment and complete the transaction.</li>
+              <li>Receive your confirmation and e-tickets via email or app.</li>
+            </ol>
+          </p>
+
+          <h6 class="question-clr">Q: Can I cancel or refund my online movie ticket?</h6>
+          <p>A: Policies vary, but generally, movie tickets purchased online are non-refundable. Please check the terms and conditions during the booking process.</p>
+
+          <h6 class="question-clr">Q: How do I access my e-tickets?</h6>
+          <p>A: After completing the booking, you will receive an email or app notification with your e-tickets. Simply present the e-tickets at the theater's entrance for entry.</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="exampleModal12"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel12"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel12">
+              Resend Booking Confirmation
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="resendForm">
+              <div class="form-group">
+                <label for="email1">Email<span>*</span></label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email1"
+                  name="email"
+                  onkeyup="validateEmail1()"
+                />
+                <div id="emailError1" style="color: red"></div>
+              </div>
+              <div class="form-group">
+                <label for="mobile">Mobile<span>*</span></label>
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="mobile"
+                  name="mobile"
+                  onkeyup="validateMobile()"
+                />
+                <div id="mobileError" style="color: red"></div>
+              </div>
+              <button
+                class="btn login-btn"
+                type="button"
+                onclick="resendBookingConfirmation()"
+              >
+                Resend
+              </button>
+              <div
+                id="successMessage"
+                class="text-success"
+                style="display: none"
+              >
+                Confirmation Resent Successfully!
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../JS/seat-c.js"></script>
+
+    <!-- <script src="script.js"></script> -->
+  </body>
+</html>

@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Movie Ticket Booking</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+    <link
+      href="https://.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="../static/css/styles.css" />
+  </head>
+  <body>
+    <img
+      src="../static/assets/Admin Panel.jpeg"
+      alt="Bg image"
+      class="bg-img img-fluid"
+    />
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <div class="col">
+          <a class="navbar-brand" href="index.html"
+            >Movie<span>Tickets</span></a
+          >
+        </div>
+        <div class="col">
+          <p class="text-end mt-3 officer-panel">Admin Panel</p>
+        </div>
+      </div>
+    </nav>
+    <div
+      class="container d-flex justify-content-center align-items-center mt-5"
+    >
+      <div class="col col-md-6 col-sm-6 col-lg-4 login-form">
+        <h1 class="text-center signin-form">Change Password</h1>
+        <form
+          role="form"
+          class="mt-5 d-flex flex-column gap-3"
+          onsubmit="return validateForm()"
+        >
+          <div class="form-group">
+            <label for="email">Email Address<span>*</span></label>
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              name="email"
+              placeholder="Enter Email"
+              onkeyup="validateEmail()"
+              style="
+                border: 1px solid white;
+                background-color: transparent;
+                color: white;
+              "
+            />
+            <div id="emailError" class="error-message"></div>
+          </div>
+          <button
+            class="btn login-btn proceed-btn"
+            onclick="sendOTP()"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal11"
+            id="sendOTPBtn"
+            disabled
+          >
+            Send OTP
+          </button>
+          <button
+            onclick="redirectToSignIn()"
+            class="btn login-btn proceed-btn"
+            style="
+              background-color: white;
+              border: 1px solid white;
+              color: black;
+            "
+          >
+            Sign-In
+          </button>
+          <div
+            class="modal fade forgot-modal"
+            id="exampleModal11"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel11"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel11">
+                    Enter OTP
+                  </h5>
+                  <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="modal"
+                    aria-label="Close"
+                  ></button>
+                </div>
+                <div class="modal-body">
+                  <div class="form-group">
+                    <label for="text">OTP<span>*</span></label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      id="OTP"
+                      name="OTP"
+                      placeholder="Enter 1234"
+                      onkeyup="validateOTP()"
+                    />
+                    <div id="OTPError" class="error-message"></div>
+                    <button
+                      class="btn login-btn"
+                      onclick="showPasswordFields()"
+                      id="enterBtn"
+                      disabled
+                    >
+                      Enter
+                    </button>
+                  </div>
+                  <div
+                    class="form-group"
+                    id="passwordFields"
+                    style="display: none"
+                  >
+                    <label for="password">New Password<span>*</span></label>
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="password"
+                      name="password"
+                      onkeyup="validatePassword()"
+                    />
+                    <div id="passwordError" class="error-message"></div>
+                    <label for="confirmPassword"
+                      >Confirm Password<span>*</span></label
+                    >
+                    <input
+                      type="password"
+                      class="form-control"
+                      id="confirmPassword"
+                      name="confirmPassword"
+                      onkeyup="validateConfirmPassword()"
+                    />
+                    <div id="confirmPasswordError" class="error-message"></div>
+                    <button
+                      type="button"
+                      onclick="changePassword()"
+                      id="changePasswordBtn"
+                      disabled
+                      class="btn login-btn proceed-btn"
+                    >
+                      Change Password
+                    </button>
+                    <div id="successMessage"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script>
+      function changePassword() {
+        // Validate the form
+        var isPasswordValid = validatePassword();
+        var isConfirmPasswordValid = validateConfirmPassword();
+
+        // Display success message if passwords are valid
+        if (isPasswordValid && isConfirmPasswordValid) {
+          var successMessage = document.getElementById("successMessage");
+          successMessage.innerHTML =
+            '<div class="alert alert-success" role="alert">Password changed successfully!</div>';
+          document.getElementById("passwordFields").appendChild(successMessage);
+        }
+      }
+
+      function redirectToSignIn() {
+        window.location.href = "index.html";
+      }
+
+      function validateForm() {
+        var isEmailValid = validateEmail();
+        var isOTPValid = validateOTP();
+        var isPasswordValid = validatePassword();
+        var isConfirmPasswordValid = validateConfirmPassword();
+
+        return (
+          isEmailValid &&
+          isOTPValid &&
+          isPasswordValid &&
+          isConfirmPasswordValid
+        );
+      }
+
+      function validateEmail() {
+        var email = document.getElementById("email").value;
+        var emailError = document.getElementById("emailError");
+
+        emailError.innerHTML = "";
+
+        var emailRegex =
+          /^[^*,!"\/\\{}\[\].,~#$%^&()+\-=?<>\s']+@\S+\.\S{2,6}$/;
+
+        if (email.trim() === "") {
+          emailError.innerHTML = "Email is required";
+          emailError.classList.add("error-message");
+          enableDisableBtn("sendOTPBtn", false);
+          return false;
+        } else if (!emailRegex.test(email)) {
+          emailError.innerHTML = "Invalid email format";
+          emailError.classList.add("error-message");
+          enableDisableBtn("sendOTPBtn", false);
+          return false;
+        } else {
+          emailError.classList.remove("error-message");
+          enableDisableBtn("sendOTPBtn", true);
+          return true;
+        }
+      }
+
+      function sendOTP() {
+        if (validateEmail()) {
+          // Display OTP-related elements
+          document.getElementById("OTPError").innerHTML = "";
+          document.getElementById("passwordFields").style.display = "none"; // Hide password fields initially
+
+          // Enable Enter button
+          enableDisableBtn("enterBtn", true);
+        }
+      }
+
+      function validateOTP() {
+        var otp = document.getElementById("OTP").value;
+        var otpError = document.getElementById("OTPError");
+
+        otpError.innerHTML = "";
+
+        var staticOTP = "1234";
+
+        if (otp.trim() === "") {
+          otpError.innerHTML = "OTP is required";
+          otpError.classList.add("error-message");
+          enableDisableBtn("enterBtn", false);
+          return false;
+        } else if (otp !== staticOTP) {
+          otpError.innerHTML = "Incorrect OTP";
+          otpError.classList.add("error-message");
+          enableDisableBtn("enterBtn", false);
+          return false;
+        } else {
+          otpError.classList.remove("error-message");
+          enableDisableBtn("enterBtn", true);
+          return true;
+        }
+      }
+
+      function showPasswordFields() {
+        if (validateOTP()) {
+          // Display password-related elements
+          document.getElementById("passwordFields").style.display = "block";
+
+          // Enable Change Password button
+          enableDisableBtn("changePasswordBtn", true);
+        }
+      }
+
+      function validatePassword() {
+        var password = document.getElementById("password").value;
+        var passwordError = document.getElementById("passwordError");
+
+        passwordError.innerHTML = "";
+
+        if (password.trim() === "") {
+          passwordError.innerHTML = "Password is required";
+          passwordError.classList.add("error-message");
+          enableDisableBtn("changePasswordBtn", false);
+          return false;
+        } else if (password.length < 6) {
+          passwordError.innerHTML = "Password must be at least 6 characters";
+          passwordError.classList.add("error-message");
+          enableDisableBtn("changePasswordBtn", false);
+          return false;
+        } else {
+          passwordError.classList.remove("error-message");
+          enableDisableBtn("changePasswordBtn", true);
+          return true;
+        }
+      }
+
+      function validateConfirmPassword() {
+        var password = document.getElementById("password").value;
+        var confirmPassword = document.getElementById("confirmPassword").value;
+        var confirmPasswordError = document.getElementById(
+          "confirmPasswordError"
+        );
+
+        confirmPasswordError.innerHTML = "";
+
+        if (confirmPassword.trim() === "") {
+          confirmPasswordError.innerHTML = "Confirm Password is required";
+          confirmPasswordError.classList.add("error-message");
+          enableDisableBtn("changePasswordBtn", false);
+          return false;
+        } else if (confirmPassword !== password) {
+          confirmPasswordError.innerHTML = "Passwords do not match";
+          confirmPasswordError.classList.add("error-message");
+          enableDisableBtn("changePasswordBtn", false);
+          return false;
+        } else {
+          confirmPasswordError.classList.remove("error-message");
+          enableDisableBtn("changePasswordBtn", true);
+          return true;
+        }
+      }
+
+      function enableDisableBtn(btnId, isEnabled) {
+        var btn = document.getElementById(btnId);
+        btn.disabled = !isEnabled;
+      }
+    </script>
+  </body>
+</html>
