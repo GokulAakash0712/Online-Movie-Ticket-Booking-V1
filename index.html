@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Movie Ticket Booking - Bootstarp & JS</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+      crossorigin="anonymous"
+    ></script>
+
+    <link
+      href="https://.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <!-- <link rel="stylesheet" href="static/css/style.css" /> -->
+    <link rel="stylesheet" href="static/css/styles.css" />
+  </head>
+  <body>
+    <nav class="navbar navbar-expand-lg nav-index">
+      <div class="container d-flex align-items-end gap-2">
+        <a class="navbar-brand fs-5 col-sm-2" href="#"
+          >Movie<span>Tickets</span></a
+        >
+        <div class="search col-lg-6 col-sm-6 col-md-5">
+          <i class="fa fa-search"></i>
+          <input type="text" class="form-control searchMovie" placeholder="Search Movie" id="movieSearch"/>
+        </div>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="" role="button"
+            ><i class="fa fa-bars" aria-hidden="true" style="color: #e6e6ff"></i
+          ></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="row">
+            <div class="col">
+              <select name="city" id="city">
+                <option value="salem">Salem</option>
+                <option value="Coimbatore">Coimbatore</option>
+                <option value="chennai">Chennai</option>
+              </select>
+            </div>
+
+            <div class="col">
+              <a href="./Customer and Guest/7.login.html"
+                ><button class="btn login-btn sign-in-btn">Sign-In</button></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <div class="container-fluid tariler">
+      <div class="row d-flex gy-3 text-center flex-nowrap trailer-scroll">
+        <div class="col">
+          <img
+            src="./static/assets/Leo Trailer.jpg"
+            alt=""
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          />
+        </div>
+        <div class="col">
+          <img
+            src="./static/assets/Kushi.jpg"
+            alt=""
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal1"
+          />
+        </div>
+        <div class="col">
+          <img
+            src="./static/assets/JAILER.jpg"
+            alt=""
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal2"
+          />
+        </div>
+        <div class="col">
+          <img
+            src="./static/assets/Dhuruva Natchathirama.jpg"
+            alt=""
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal3"
+          />
+        </div>
+        <div class="col">
+          <img
+            src="./static/assets/Captain Miller.jpg"
+            alt=""
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal4"
+          />
+        </div>
+        <div class="col">
+          <img
+            src="./static/assets/Iayalan.jpg"
+            alt=""
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal5"
+          />
+        </div>
+        <div class="col">
+          <img
+            src="./static/assets/KOK.jpg"
+            alt=""
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal6"
+          />
+        </div>
+        <div class="col">
+          <img
+            src="./static/assets/Chitha.jpg"
+            alt=""
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal7"
+          />
+        </div>
+        <div class="col">
+          <img
+            src="./static/assets/Chandramuki 2.jpg"
+            alt=""
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal8"
+          />
+        </div>
+        <div class="col">
+          <img
+            src="./static/assets/IRAIVAN.jpg"
+            alt=""
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal9"
+          />
+        </div>
+        <div class="col">
+          <img
+            src="./static/assets/PT Sir.jpg"
+            alt=""
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal10"
+          />
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="exampleModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Leo Trailer</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <video src="./static/assets/leo.mp4" controls></video>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="modal fade"
+        id="exampleModal1"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel1">Kushi Trailer</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <video src="./static/assets/kushi trailer.mp4" controls></video>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="modal fade"
+        id="exampleModal2"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel2">
+                Jailer Trailer
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <video src="./static/assets/jailer trailer.mp4" controls></video>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="modal fade"
+        id="exampleModal3"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel3">
+                Dhuruva Natchathiram Trailer
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <video src="./static/assets/dhuruva trailer.mp4" controls></video>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="modal fade"
+        id="exampleModal4"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel4">
+                Captain Miller Trailer
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <video src="./static/assets/CM.mp4" controls></video>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="modal fade"
+        id="exampleModal5"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel5">
+                Ayalaan Trailer
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <video src="./static/assets/ayalaan trailer.mp4" controls></video>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="modal fade"
+        id="exampleModal6"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel6">KOK Trailer</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <video
+                src="./static/assets/King of Kotha Trailer.mp4"
+                controls
+              ></video>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="modal fade"
+        id="exampleModal7"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel7">
+                Chitha Trailer
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <video
+                src="./static/assets//Chittha Tamil Trailer.mp4"
+                controls
+              ></video>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="modal fade"
+        id="exampleModal8"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel8">
+                Chandramuki 2 Trailer
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <video
+                src="./static/assets/Chandramukhi 2 - Trailer.mp4"
+                controls
+              ></video>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="modal fade"
+        id="exampleModal9"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel9">
+                Iraivan Trailer
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <video
+                src="./static/assets/Iraivan Trailer _.mp4"
+                controls
+              ></video>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        class="modal fade"
+        id="exampleModal10"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel10">
+                PT Sir Trailer
+              </h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <video src="./static/assets/PT Sir trailer.mp4" controls></video>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      id="carouselExampleCaptions"
+      class="carousel slide"
+      data-bs-ride="carousel"
+    >
+      <div class="carousel-indicators">
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="0"
+          class="active"
+          aria-current="true"
+          aria-label="Slide 1"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="1"
+          aria-label="Slide 2"
+        ></button>
+        <button
+          type="button"
+          data-bs-target="#carouselExampleCaptions"
+          data-bs-slide-to="2"
+          aria-label="Slide 3"
+        ></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img
+            src="static/assets/Leo banner.jpg"
+            class="d-block w-100"
+            alt=""
+          />
+        </div>
+        <div class="carousel-item">
+          <img
+            src="static/assets/kushi_banner.jpeg"
+            class="d-block w-100"
+            alt=""
+          />
+        </div>
+        <div class="carousel-item">
+          <img src="static/assets/jailer3.jpeg" class="d-block w-100" alt="" />
+        </div>
+      </div>
+      <button
+        class="carousel-control-prev"
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="prev"
+      >
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button
+        class="carousel-control-next"
+        type="button"
+        data-bs-target="#carouselExampleCaptions"
+        data-bs-slide="next"
+      >
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <div class="container mt-5 popular-movie-section" id="movieContainer">
+      <div class="row">
+        <div class="col">
+          <p>Popular Movies</p>
+        </div>
+      </div>
+      <div class="row" id="movieList">
+        <div class="col d-flex movie-container">
+          <div class="container mx-auto mt-4">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="card card-movie">
+                  <img
+                    src="static/assets/LEO UP.jpg"
+                    class="card-img-top"
+                    alt=""
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Leo</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">
+                      <ul class="p-0 d-flex gap-2">
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li>
+                          <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                        </li>
+                      </ul>
+                    </h6>
+                    <p class="card-text">1M Votes</p>
+                    <a
+                      href="./Customer and Guest/7.login.html"
+                      class="btn btn-movie mr-2"
+                      >View More</a
+                    >
+                    <a
+                      href="./Customer and Guest/7.login.html"
+                      class="btn btn-movie"
+                      >Book Now</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container mx-auto mt-4">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="card card-movie">
+                  <img
+                    src="static/assets/JAILER.jpg"
+                    class="card-img-top"
+                    alt=""
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Jailer</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">
+                      <ul class="p-0 d-flex gap-2">
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                      </ul>
+                    </h6>
+                    <p class="card-text">50K Votes</p>
+                    <a
+                      href="./Customer and Guest/7.login.html"
+                      class="btn btn-movie mr-2"
+                      >View More</a
+                    >
+                    <a
+                      href="./Customer and Guest/7.login.html"
+                      class="btn btn-movie"
+                      >Book Now</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container mx-auto mt-4">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="card card-movie">
+                  <img
+                    src="static/assets/Kushi.jpg"
+                    class="card-img-top"
+                    alt=""
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Kushi</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">
+                      <ul class="p-0 d-flex gap-2">
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li>
+                          <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                        </li>
+                      </ul>
+                    </h6>
+                    <p class="card-text">60K Votes</p>
+                    <a
+                      href="./Customer and Guest/7.login.html"
+                      class="btn btn-movie mr-2"
+                      >View More</a
+                    >
+                    <a
+                      href="./Customer and Guest/7.login.html"
+                      class="btn btn-movie"
+                      >Book Now</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container mx-auto mt-4">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="card card-movie">
+                  <img
+                    src="static/assets/KOK.jpg"
+                    class="card-img-top"
+                    alt=""
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">King of Kotha</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">
+                      <ul class="p-0 d-flex gap-2">
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                      </ul>
+                    </h6>
+                    <p class="card-text">30K Votes</p>
+                    <a
+                      href="./Customer and Guest/7.login.html"
+                      class="btn btn-movie mr-2"
+                      >View More</a
+                    >
+                    <a
+                      href="./Customer and Guest/7.login.html"
+                      class="btn btn-movie"
+                      >Book Now</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container mt-2 popular-movie-section">
+      <div class="row">
+        <div class="col">
+          <p>Upcoming Movies</p>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col d-flex movie-container">
+          <div class="container mx-auto mt-4">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="card card-movie">
+                  <img
+                    src="static/assets/Dhuruva Natchathirama.jpg"
+                    class="card-img-top"
+                    alt=""
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Dhuruva Natchathiram</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">
+                      <ul class="p-0 d-flex gap-2">
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                      </ul>
+                    </h6>
+                    <p class="card-text">40K Votes</p>
+                    <a
+                      href="./Customer and Guest/7.login.html"
+                      class="btn btn-movie mr-2"
+                      >View More</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container mx-auto mt-4">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="card card-movie">
+                  <img
+                    src="static/assets/Captain Miller.jpg"
+                    class="card-img-top"
+                    alt=""
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Captain Miller</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">
+                      <ul class="p-0 d-flex gap-2">
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li>
+                          <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                        </li>
+                      </ul>
+                    </h6>
+                    <p class="card-text">50K Votes</p>
+                    <a
+                      href="./Customer and Guest/7.login.html"
+                      class="btn btn-movie mr-2"
+                      >View More</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container mx-auto mt-4">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="card card-movie">
+                  <img
+                    src="static/assets/Iayalan.jpg"
+                    class="card-img-top"
+                    alt=""
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">Ayalaan</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">
+                      <ul class="p-0 d-flex gap-2">
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li>
+                          <i class="fa fa-star-half-o" aria-hidden="true"></i>
+                        </li>
+                      </ul>
+                    </h6>
+                    <p class="card-text">45K Votes</p>
+                    <a
+                      href="./Customer and Guest/7.login.html"
+                      class="btn btn-movie mr-2"
+                      >View More</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="container mx-auto mt-4">
+            <div class="row">
+              <div class="col-md-4">
+                <div class="card card-movie">
+                  <img
+                    src="static/assets/PT Sir.jpg"
+                    class="card-img-top"
+                    alt=""
+                  />
+                  <div class="card-body">
+                    <h5 class="card-title">PT Sir</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">
+                      <ul class="p-0 d-flex gap-2">
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star" aria-hidden="true"></i></li>
+                        <li><i class="fa fa-star-o" aria-hidden="true"></i></li>
+                      </ul>
+                    </h6>
+                    <p class="card-text">30K Votes</p>
+                    <a
+                      href="./Customer and Guest/7.login.html"
+                      class="btn btn-movie mr-2"
+                      >View More</a
+                    >
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer footer-movie-description">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12 footer-logo mt-4">
+            <a href="#">Movie <span>Tickets</span></a>
+          </div>
+        </div>
+        <div class="row mt-4 d-flex align-items-start policy-item">
+          <div
+            class="col-4 d-flex flex-column justify-content-center align-items-center footer-detail"
+          >
+            <p><i class="fa fa-envelope" aria-hidden="true"></i></p>
+            <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal11"
+              ><p class="text-center">24/7 Customer Support</p></a
+            >
+          </div>
+          <div
+            class="col-4 d-flex flex-column justify-content-center align-items-center footer-detail"
+          >
+            <p><i class="fa fa-envelope" aria-hidden="true"></i></p>
+            <a href="" data-bs-toggle="modal" data-bs-target="#exampleModal12"
+              ><p class="text-center">Resend Booking Confirmation</p></a
+            >
+          </div>
+          <div
+            class="col-4 d-flex flex-column justify-content-center align-items-center footer-detail"
+          >
+            <p><i class="fa fa-envelope" aria-hidden="true"></i></p>
+            <a href="#subscribe-footer"><p class="text-center">Newsletter Subscription</p></a>
+          </div>
+        </div>
+        <div class="row">
+          <nav class="navbar navbar-expand-lg">
+            <div
+              class="container d-flex justify-content-center align-items-center mt-2"
+            >
+              <form class="d-flex subscribe">
+                <input
+                  class="form-control me-2 needs-validation"
+                  type="email"
+                  placeholder="Email Address"
+                  aria-label="Search"
+                  onkeyup="validateEmail(this.value)"
+                />
+                <button class="btn btn-subscribe" type="submit" disabled id="subscribe-footer">
+                  Subscribe
+                </button>
+              </form>
+            </div>
+          </nav>
+        </div>
+        <div class="row social-media">
+          <div class="col-lg-12 social-media-col">
+            <i class="fa fa-facebook" aria-hidden="true"></i>
+            <i class="fa fa-instagram" aria-hidden="true"></i>
+            <i class="fa fa-twitter" aria-hidden="true"></i>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Footer Modal -->
+    <div
+      class="modal fade"
+      id="exampleModal11"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel11"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel11">Frequently Asked Questions</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <h6 class="question-clr">Q: How can I book movie tickets online?</h6>
+          <p>A: To book movie tickets online, follow these steps:
+            <ol>
+              <li>Visit our website or mobile app.</li>
+              <li>Select your preferred movie and showtime.</li>
+              <li>Choose your seats and the number of tickets.</li>
+              <li>Proceed to payment and complete the transaction.</li>
+              <li>Receive your confirmation and e-tickets via email or app.</li>
+            </ol>
+          </p>
+
+          <h6 class="question-clr">Q: Can I cancel or refund my online movie ticket?</h6>
+          <p>A: Policies vary, but generally, movie tickets purchased online are non-refundable. Please check the terms and conditions during the booking process.</p>
+
+          <h6 class="question-clr">Q: How do I access my e-tickets?</h6>
+          <p>A: After completing the booking, you will receive an email or app notification with your e-tickets. Simply present the e-tickets at the theater's entrance for entry.</p>
+
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      class="modal fade"
+      id="exampleModal12"
+      tabindex="-1"
+      aria-labelledby="exampleModalLabel12"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel12">
+              Resend Booking Confirmation
+            </h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <form id="resendForm">
+              <div class="form-group">
+                <label for="email1">Email<span>*</span></label>
+                <input
+                  type="email"
+                  class="form-control"
+                  id="email1"
+                  name="email"
+                  onkeyup="validateEmail1()"
+                />
+                <div id="emailError1" style="color: red"></div>
+              </div>
+              <div class="form-group">
+                <label for="mobile">Mobile<span>*</span></label>
+                <input
+                  type="tel"
+                  class="form-control"
+                  id="mobile"
+                  name="mobile"
+                  onkeyup="validateMobile()"
+                />
+                <div id="mobileError" style="color: red"></div>
+              </div>
+              <button
+                class="btn login-btn"
+                type="button"
+                onclick="resendBookingConfirmation()"
+              >
+                Resend
+              </button>
+              <div
+                id="successMessage"
+                class="text-success"
+                style="display: none"
+              >
+                Confirmation Resent Successfully!
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- <script src="script.js"></script> -->
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+   <script src="JS/index.js"></script>
+  </body>
+</html>

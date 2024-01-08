@@ -1,0 +1,1071 @@
+:root {
+  --gradient: linear-gradient(to left top, #dd2476 10%, #ff512f 90%) !important;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+}
+
+/*Customer and Guest start*/
+.bg-img {
+  height: 100vh;
+  min-height: 500px;
+  width: 100vw;
+  object-fit: cover;
+  filter: brightness(0.3);
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+.navbar .container-fluid .navbar-brand {
+  color: white;
+  font-weight: bold;
+}
+.navbar .container-fluid .navbar-brand span {
+  color: red;
+  font-weight: bold;
+}
+.navbar .container .navbar-brand {
+  color: white;
+  font-weight: bold;
+}
+.navbar .container .navbar-brand span {
+  color: red;
+  font-weight: bold;
+}
+.search {
+  position: relative;
+  box-shadow: 0 0 40px rgba(51, 51, 51, 0.1);
+}
+
+.search input {
+  height: 40px;
+  text-indent: 25px;
+  border: 1px solid #d6d4d4;
+  background-color: transparent;
+  outline: none;
+  color: white;
+}
+.search input:focus {
+  border: 1px solid white;
+  outline: none;
+  background-color: transparent;
+  box-shadow: none;
+  color: white;
+}
+.search input::placeholder {
+  color: white;
+}
+.search .fa-search {
+  position: absolute;
+  color: white;
+  top: 13px;
+  left: 16px;
+}
+.fa-ticket {
+  font-size: 30px;
+  color: white;
+  transform: rotate(45deg);
+  margin-top: 15px;
+}
+.nav-item .dropdown-txt {
+  margin-left: 20px;
+  margin-right: 20px;
+  color: white;
+  margin-top: 10px;
+}
+.login-btn {
+  width: 100px;
+  border: 1px solid red;
+  background-color: red;
+  color: white;
+  margin-top: 10px;
+}
+.login-btn:hover {
+  border: 1px solid red;
+  background-color: red;
+  color: white;
+}
+.container-fluid .navbar-toggler {
+  background-color: transparent;
+  border: none;
+}
+.container .navbar-toggler {
+  background-color: transparent;
+  border: none;
+}
+.navbar-toggler .fa-bar {
+  background-color: white;
+}
+.container-fluid .navbar-toggler:focus {
+  border: 1px solid white;
+  outline: none;
+  box-shadow: none;
+}
+.container .navbar-toggler:focus {
+  border: 1px solid white;
+  outline: none;
+  box-shadow: none;
+}
+.logo {
+  text-decoration: none;
+  color: white;
+}
+.card-movies {
+  border: 1px solid black;
+  border-radius: 10px;
+  height: 450px;
+  width: 300px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+.card-movies .banner {
+  height: 100px;
+  width: 100px;
+  border-radius: 100%;
+}
+.card-movies img {
+  height: 100%;
+  width: 100%;
+  background-size: cover;
+  border-radius: 10px;
+}
+.movie-details-proceed {
+  position: absolute;
+  top: 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+}
+.card-movies h3 {
+  color: white;
+}
+.proceed-btn {
+  width: 100%;
+}
+.card-movies .booking-summary {
+  color: red;
+}
+.form-container .row h3 {
+  font-size: 20px;
+  color: white;
+}
+.form-container .row h3 span {
+  color: red;
+  font-weight: bold;
+}
+.form-container .row .contact-details input {
+  height: 40px;
+  width: 250px;
+  /* margin-top: 20px; */
+  margin-bottom: 5px;
+  background-color: transparent;
+  border: 1px solid white;
+  outline: none;
+  padding-left: 10px;
+  color: white;
+  border-radius: 7px;
+}
+.movie-details-proceed h3 {
+  font-size: 19px;
+}
+.form-container .row .contact-details input::placeholder {
+  color: white;
+}
+.form-container .row .payment-details {
+  color: white;
+}
+.form-container .row .payment-details input {
+  margin-top: 20px;
+  margin-right: 10px;
+}
+#upi {
+  margin-left: -120px;
+}
+#Card-payment {
+  margin-left: -50px;
+}
+#cash-payment {
+  margin-left: -60px;
+  margin-bottom: 20px;
+}
+.payment-btn {
+  width: 250px;
+}
+.payment-contact-detail {
+  padding: 50px;
+  margin-top: -30px;
+}
+.card-details {
+  margin-left: 50px;
+}
+.card-movie-payment {
+  width: 250px;
+  height: 350px;
+}
+.card-movie-payment .movie-details-proceed h3 {
+  font-size: 17px;
+}
+.card-movie-payment .movie-details-proceed .booking-summary {
+  color: red;
+  margin-top: -10px;
+}
+.payment-contact-detail form .form-group input {
+  border: 1px solid white;
+  outline: none;
+}
+.payment-contact-detail form .form-group input:focus {
+  border: 1px solid white;
+  outline: none;
+  box-shadow: none;
+}
+#paymentModal {
+  width: 700px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -47%);
+}
+#paymentModal span {
+  color: red;
+}
+.modal-payment-btn {
+  width: 50%;
+  margin: auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.modal-payment-label-1 {
+  margin-left: -100px;
+}
+.modal-payment-label-2 {
+  margin-left: -110px;
+}
+.modal-payment-label-3 {
+  margin-left: -160px;
+}
+#paymentModal input {
+  margin: 10px 0;
+  border: 1px solid black;
+  outline: none;
+  padding-left: 10px;
+  color: black;
+}
+#paymentModal input:focus {
+  border: 1px solid black;
+  outline: none;
+}
+.close-btn {
+  text-align: end;
+  font-size: 30px;
+  margin-top: -10px;
+}
+
+.footer {
+  position: relative;
+  top: 5vh;
+  width: 100%;
+  min-height: 100px;
+  background-color: #353345;
+}
+
+.footer-logo {
+  text-align: center;
+}
+.footer-logo span {
+  color: red;
+}
+.footer-logo a {
+  font-size: 25px;
+  text-decoration: none;
+  color: white;
+}
+.footer-detail {
+  color: white;
+}
+.subscribe {
+  width: 350px;
+  margin-bottom: 20px;
+}
+.btn-subscribe {
+  border: 1px solid red;
+  color: red;
+}
+.btn-subscribe:hover {
+  border: 1px solid red;
+  background-color: red;
+  color: white;
+}
+.subscribe input {
+  border: 1px solid white;
+  outline: none;
+}
+.subscribe input:focus {
+  border: 1px solid white;
+  outline: none;
+  box-shadow: none;
+}
+.social-media {
+  min-height: 100px;
+  background-color: white;
+  text-align: center;
+}
+.social-media i {
+  font-size: 30px;
+}
+.social-media-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+}
+.success {
+  color: rgb(7, 242, 7);
+}
+.profile {
+  height: 40px;
+  width: 40px;
+  border-radius: 100%;
+}
+.login-form {
+  color: white;
+}
+.login-form input {
+  border: 1px solid white;
+  outline: none;
+}
+.login-form input:focus {
+  border: 1px solid white;
+  outline: none;
+  box-shadow: none;
+}
+.forgot {
+  margin-left: 30px;
+  text-decoration: none;
+  color: white;
+}
+.signin-form {
+  color: red;
+}
+.login-form span {
+  color: red;
+}
+.movie-description {
+  color: white;
+}
+.rate-btn {
+  background-color: white;
+  border: 1px solid white;
+  color: black;
+  font-size: 10px;
+  padding: 5px 12px;
+}
+.card-movie-description {
+  margin-top: 50px;
+}
+.share {
+  background-color: rgba(0, 0, 0, 0.695);
+  padding: 10px 86px;
+}
+.cast-crew-img img {
+  height: 80px;
+  width: 80px;
+  background-size: cover;
+  border-radius: 100%;
+}
+.book-ticket-btn {
+  font-size: 10px;
+  padding: 5px 12px;
+}
+.card-movie-description i {
+  font-size: 18px;
+}
+.card-movie-description h3 {
+  font-size: 18px;
+}
+.footer-movie-description {
+  position: relative;
+  top: 10vh;
+}
+.popular-movies img {
+  height: 150px;
+  width: 150px;
+  background-size: cover;
+}
+.popular-movies {
+  color: red;
+}
+.nav-item .nav-link.active {
+  background-color: red;
+  padding: 5px 7px;
+}
+.nav-item .nav-link {
+  color: red;
+}
+.card-seat {
+  border: 1px solid white;
+  height: 500px;
+  width: 300px;
+}
+select {
+  font-size: 15px;
+  padding: 10px 20px;
+  border: 1px solid black;
+  outline: none;
+}
+option {
+  background-color: red;
+  color: white;
+  border: 1px solid white;
+  outline: none;
+}
+.seat-tab {
+  font-size: 11px;
+}
+.card-seat img {
+  height: 50%;
+  width: 100%;
+  object-fit: cover;
+}
+.card-title {
+  color: red;
+}
+.carousel img {
+  height: 550px;
+  width: 100vw;
+  background-size: contain;
+}
+.tariler img {
+  height: 80px;
+  width: 80px;
+  border-radius: 100%;
+  border: 3px solid white;
+  background-size: cover;
+}
+.tariler {
+  background-color: #1f2533;
+  min-height: 100px;
+  padding: 10px;
+}
+.nav-index {
+  background-color: #353345;
+  min-height: 100px;
+}
+.card-movie {
+  width: 255px;
+  height: 400px;
+}
+.card-movie img {
+  height: 50%;
+  width: 100%;
+  background-size: cover;
+  border-radius: 10px 10px 0 0;
+}
+.card-movie {
+  background: #222;
+  border: 1px solid #dd2476;
+  color: rgba(250, 250, 250, 0.8);
+  margin-bottom: 2rem;
+}
+.card-subtitle ul li {
+  list-style-type: none;
+  color: goldenrod;
+}
+.card-description-img img {
+  height: 100%;
+}
+.card-description-img {
+  border: 1px solid white;
+}
+.btn-movie {
+  border: 5px solid;
+  border-image-slice: 1;
+  background: var(--gradient) !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  border-image-source: var(--gradient) !important;
+  text-decoration: none;
+  transition: all 0.4s ease;
+}
+
+.btn-movie:hover,
+.btn:focus {
+  background: var(--gradient) !important;
+  -webkit-background-clip: none !important;
+  -webkit-text-fill-color: #fff !important;
+  border: 1px solid #fff !important;
+  box-shadow: #222 1px 0 10px;
+  text-decoration: underline;
+}
+.popular-movie-section p {
+  color: red;
+}
+.card-body .card-text {
+  color: white;
+}
+#city {
+  width: 100px;
+  margin-left: -1px;
+  margin-top: 10px;
+  padding-left: 0;
+}
+
+.tab-border {
+  border: 1px solid white;
+}
+.screen {
+  height: 30px;
+  width: 100%;
+  background-color: black;
+  transform: rotateX(40deg);
+  box-shadow: red 0px 14px 28px, red 0px 10px 10px;
+}
+.box {
+  height: 30px;
+  width: 10px;
+  border: 1px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.seat-txt {
+  color: red;
+}
+.box:hover {
+  border: 1px solid white;
+  background-color: green;
+  color: white;
+  cursor: pointer;
+}
+.seat-identify {
+  height: 10px;
+  width: 10px;
+  margin-top: 2px;
+}
+.seat-identify-p {
+  color: black;
+  font-size: 10px;
+}
+.booked-clr {
+  border: 1px solid green;
+  background-color: green;
+  color: white;
+}
+.trailer-scroll {
+  overflow: hidden;
+}
+.cancel-btn {
+  background-color: black;
+  border: 1px solid black;
+}
+.cancel-btn:hover {
+  background-color: black;
+  border: 1px solid black;
+}
+.movie-container {
+  overflow: hidden;
+}
+.modal-body video {
+  height: 100%;
+  width: 100%;
+}
+.modal-body .fa-star-o {
+  color: black;
+}
+.modal-body .fa-star-o:hover {
+  color: gold;
+}
+.selected-clr {
+  background-color: green;
+  color: white;
+}
+.pay-btn {
+  min-width: 150px;
+}
+.error-message {
+  color: red;
+}
+#ratingStars i.fa-star {
+  color: gold;
+}
+.tariler img:hover{
+  cursor: pointer;
+}
+.txt-bold{
+  font-weight: bold;
+}
+.popular-movies img:hover{
+  transform: translateY(-20px);
+}
+/*Customer and Guest end*/
+
+@media screen and (min-width: 320px) {
+  .card-movie-payment {
+    width: 250px;
+    margin-left: 10px;
+  }
+  .popular-movies {
+    color: red;
+    margin-top: 70px;
+  }
+  .seat-txt {
+    overflow: scroll;
+  }
+  .trailer-scroll {
+    overflow: scroll;
+  }
+  .movie-container {
+    overflow: scroll;
+  }
+  .admin-container-scroll {
+    overflow-x: scroll;
+  }
+  .m-management-container {
+    overflow-x: scroll;
+  }
+}
+@media screen and (width: 320px) {
+  .card-movie-payment {
+    width: 250px;
+    margin-left: -25px;
+  }
+}
+@media screen and (width: 768px) {
+  .card-movie-payment {
+    width: 250px;
+    margin-left: -25px;
+  }
+  .add-time-btn {
+    margin-top: -5px;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .popular-movies {
+    color: red;
+    margin-top: 250px;
+  }
+  .sign-in-btn {
+    margin-left: 100px;
+  }
+  .ticket-nav {
+    margin-left: 23px;
+  }
+  .seat-txt {
+    overflow: hidden;
+  }
+  .seat-identify-p {
+    color: white;
+    font-size: 15px;
+  }
+  .seat-identify {
+    height: 20px;
+    width: 20px;
+  }
+  .trailer-scroll {
+    overflow: hidden;
+  }
+  .movie-container {
+    overflow: hidden;
+  }
+  .admin-container-scroll {
+    overflow-x: hidden;
+  }
+  .m-management-container {
+    overflow-x: scroll;
+  }
+  .add-time-btn {
+    margin-top: -5px;
+  }
+}
+
+@media screen and (width: 1024px) {
+  .seat-identify-p {
+    color: white;
+  }
+  .seat-identify-p {
+    color: white;
+    font-size: 12px;
+  }
+  .seat-identify {
+    height: 15px;
+    width: 15px;
+  }
+}
+
+/*Officer panel start*/
+.officer-panel {
+  color: white;
+  font-size: 20px;
+}
+.details-officer {
+  color: white;
+  margin-top: 12px;
+  /* margin-left: 50px; */
+}
+.details-officer-a {
+  text-decoration: none;
+}
+.container-table {
+  border: 1px solid white;
+  padding: 50px;
+  color: white;
+  height: 85vh;
+  overflow-y: scroll;
+}
+.container-table td {
+  border: 1px solid white;
+  color: white;
+}
+.container-table th {
+  border: 1px solid white;
+}
+thead tr {
+  text-align: center;
+}
+thead {
+  background-color: black;
+}
+.container-table th {
+  color: red;
+}
+.btn-detail {
+  margin-top: -2px;
+}
+.detail-footer {
+  margin-top: -10px;
+}
+.detail-footer-logo {
+  padding-bottom: 20px;
+}
+/*Officer panel end*/
+/*admin panel start*/
+.admin-container {
+  min-height: 450px;
+  width: 100vw;
+  margin-top: 50px;
+}
+.admin-container img {
+  height: 300px;
+  width: 300px;
+  border: 1px solid white;
+}
+.admin-container img:hover {
+  transform: translateY(-10px);
+}
+.movie-management {
+  font-size: 25px;
+}
+.m-management-container img {
+  height: 400px;
+  width: 250px;
+  border-radius: 10px;
+  border: 1px solid white;
+}
+.m-management-container {
+  min-height: 300px;
+}
+.movie-upload {
+  height: 400px;
+  min-width: 250px;
+  border-radius: 10px;
+  border: 1px solid white;
+  position: relative;
+}
+.movie-upload a {
+  text-decoration: none;
+  font-size: 50px;
+  color: black;
+}
+.movie-upload p {
+  height: 80px;
+  width: 80px;
+  border: 1px solid white;
+  text-align: center;
+  border-radius: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1;
+}
+.r-management {
+  text-decoration: none;
+}
+.r-management-container {
+  min-height: 300px;
+  width: 100vw;
+}
+.r-management-container img {
+  height: 400px;
+  width: 250px;
+  border-radius: 10px;
+  border: 1px solid black;
+}
+.btn-detail-crud {
+  background-color: red;
+  color: white;
+}
+.btn-detail-crud:hover {
+  background-color: red;
+  color: white;
+}
+.nav-theatre-admin {
+  background-color: #353345;
+}
+.theatre {
+  font-size: 20px;
+}
+.t-management-container {
+  border: 1px solid black;
+  padding: 20px;
+}
+.new-theatre-text {
+  font-size: 30px;
+  font-weight: bold;
+}
+.theatre-details {
+  border: 1px solid black;
+  padding: 20px;
+}
+.theatre-details input {
+  border: 1px solid black;
+  outline: none;
+  margin: 10px;
+  height: 40px;
+  width: 250px;
+  padding-left: 10px;
+  color: black;
+}
+.show-time {
+  font-weight: bold;
+}
+.show-details {
+  border: 1px solid black;
+  padding: 10px;
+}
+.time-detail {
+  border: 1px solid black;
+  margin-left: 10px;
+  padding: 10px;
+  width: 100px;
+  height: 300px;
+  overflow-y: scroll;
+}
+.add-time input {
+  border: 1px solid black;
+  outline: none;
+  padding-left: 10px;
+  height: 40px;
+}
+.theatre-btn {
+  width: 150px;
+}
+.table-theatre td {
+  color: black;
+  border: 1px solid black;
+}
+.table-theatre th {
+  border: 1px solid black;
+}
+.table-theatre tr {
+  border: 1px solid black;
+}
+.table-theatre {
+  border: 1px solid black;
+  color: black;
+}
+.movie-detail-container {
+  min-height: 100px;
+  padding: 10px;
+}
+.movie-detail-container-row {
+  border: 1px solid black;
+  min-height: 100px;
+  margin: 10px;
+  padding: 10px;
+}
+.movie-detail-container-col {
+  border: 1px solid black;
+}
+.movie-detail-container-col-detail1 {
+  padding: 10px;
+}
+.movie-detail-container-col-detail1 input {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid black;
+  outline: none;
+}
+.movie-detail-container-col-detail1 select {
+  padding: 10px;
+  margin: 10px;
+  border: 1px solid black;
+  outline: none;
+}
+.fileinput {
+  margin-left: 10px;
+  color: transparent;
+}
+.fileinput::-webkit-file-upload-button {
+  visibility: hidden;
+}
+.fileinput::before {
+  content: "+";
+  color: #1450a3;
+  display: inline-block;
+  background-color: #ecf8f9;
+  color: #1450a3;
+  border: 2px solid #1450a3;
+  padding: 5px 10px;
+  outline: none;
+  white-space: nowrap;
+  cursor: pointer;
+  font-weight: 700;
+  height: 40px;
+  width: 170px;
+  text-align: center;
+}
+.fileinput:hover::before {
+  background-color: #1450a3;
+  color: #ecf8f9;
+  border: 2px solid aliceblue;
+}
+.fileinput:active::before {
+  background: -webkit-linear-gradient(top, #068da9, #068da9);
+}
+.single1::before {
+  content: "Upload Movie Image";
+}
+.single2::before {
+  content: "Banner Image";
+}
+.single3::before {
+  content: "Banner Image";
+}
+.single5::before {
+  content: "Movie Image";
+}
+.single6::before {
+  content: "Movie Video";
+}
+.single7::before {
+  content: "Actor Image";
+}
+.single8::before {
+  content: "Crew Image";
+}
+.movie-upload-container-row {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border: 1px solid black;
+  margin: 20px;
+  padding: 20px;
+  overflow: hidden;
+}
+.movie-upload-container-row input[type="date"] {
+  border: 1px solid black;
+  margin-left: 10px;
+  height: 40px;
+  width: 170px;
+}
+/* .movie-detail-main-conatiner {
+  border: 1px solid black;
+} */
+.trailer-details {
+  border: 1px solid black;
+}
+.trailer-container {
+  padding: 10px;
+}
+.trailer-details img {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+.trailer-details video {
+  height: 80px;
+  width: 80px;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+.cast {
+  border: 1px solid black;
+  padding: 10px;
+}
+/* .cast-crew-container {
+  border: 1px solid black;
+  padding: 10px;
+} */
+.cast input[type="text"] {
+  border: 1px solid black;
+  outline: none;
+  padding-left: 10px;
+  height: 40px;
+  width: 172px;
+}
+.cast input {
+  width: 200px;
+  overflow: hidden;
+}
+.cast-actor-container {
+  border: 1px solid black;
+}
+.cast-actor-container img {
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  border: 1px solid black;
+}
+.cast-container {
+  border: 1px solid black;
+}
+.cast-container-1 {
+  border: 1px solid black;
+  padding: 10px;
+}
+.movie-add-container {
+  border: 1px solid black;
+  padding: 10px;
+}
+.movie-add-row {
+  border: 1px solid black;
+  margin: 5px;
+  padding: 5px;
+}
+.movie-add-container img {
+  height: 150px;
+  width: 150px;
+  border: 1px solid black;
+}
+.save-btn {
+  width: 150px;
+}
+.table-movie {
+  width: 85vw;
+}
+.movie-table img {
+  height: 80px;
+  width: 80px;
+}
+.movie-table video {
+  height: 80px;
+  width: 80px;
+}
+.edit {
+  text-decoration: none;
+  font-size: 20px;
+}
+.cast-form {
+  margin-left: 6px;
+}
+/*admin panel end*/
